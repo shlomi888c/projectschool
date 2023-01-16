@@ -16,7 +16,8 @@ def search():
   print(article_name)
   user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
   url = "https://www.amazon.com"
-  product_name, product_price, product_link, product_image = scrape_products(url, user_agent, article_name)
+  product_name, p
+  roduct_price, product_link, product_image = scrape_products(url, user_agent, article_name)
   # Connect to the RDS instance
   cnx = mysql.connector.connect(
     host="test.c9sygdvwszim.us-east-1.rds.amazonaws.com",
@@ -48,7 +49,7 @@ def search():
   cursor.close()
   cnx.close()
 
-  # Render the HTML template and pass the rows to the template
+  # Render the HTML templates and pass the rows to the templates
   return render_template("display.html", rows=rows)
 
 
