@@ -7,7 +7,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 def open_browser(url, user_agent):
-    driver_location = '/app/chromedriver'
+    driver_location = '//usr/local/bin/chromedriver'
     binary_location = '/usr/bin/google-chrome-stable'
 
     options = webdriver.ChromeOptions()
