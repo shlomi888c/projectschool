@@ -8,7 +8,7 @@ import time
 
 def open_browser(url, user_agent):
     driver_location = '/usr/local/bin/chromedriver'
-    binary_location = '/usr/bin/google-chrome-stable'
+    binary_location = '/usr/bin/google-chrome'
 
     options = webdriver.ChromeOptions()
     options.binary_location = binary_location
