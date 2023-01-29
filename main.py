@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.common import TimeoutException, NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -8,7 +9,7 @@ import time
 
 def open_browser(url, user_agent):
     driver_location = '/usr/local/bin/chromedriver'
-    binary_location = '/usr/bin/google-chrome'
+    binary_location = '/usr/bin/google-chrome-stable'
 
     options = webdriver.ChromeOptions()
     options.binary_location = binary_location
