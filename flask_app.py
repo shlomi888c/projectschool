@@ -40,7 +40,7 @@ def search():
 
 
   # Execute a SELECT statement to retrieve the data
-  cursor.execute("SELECT * FROM table1")
+  cursor.execute("SELECT * FROM {}".format(table_name))
 
   # Fetch the rows
   rows = cursor.fetchall()
