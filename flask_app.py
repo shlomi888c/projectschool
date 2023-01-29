@@ -30,11 +30,12 @@ def search():
   cursor = cnx.cursor()
 
   # Execute the CREATE TABLE statement
-  cursor.execute("CREATE TABLE table1  (Name VARCHAR(255), Price INT, Link VARCHAR(255), Image VARCHAR(255))")
+  table_name = "table_" + article_name.replace(" ", "_")
+  cursor.execute("CREATE TABLE {}  (Name VARCHAR(255), Price INT, Link VARCHAR(255), Image VARCHAR(255))".format(table_name))
 
   # Iterate through the lists and execute an INSERT statement for each element
   for i in range(len(product_name)):
-    cursor.execute("INSERT INTO table1 (Name, Price, Link, Image) VALUES (%s, %s, %s, %s)",
+    cursor.execute("INSERT INTO {} (Name, Price, Link, Image) VALUES (%s, %s, %s, %s)".format(table_name),
                    (product_name[i], product_price[i], product_link[i], product_image[i]))
 
 
