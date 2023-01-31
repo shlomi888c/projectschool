@@ -19,7 +19,7 @@ def search():
   product_name, product_price, product_link, product_image = scrape_products(url, user_agent, article_name)
   # Connect to the RDS instance
   cnx = mysql.connector.connect(
-    host="test.c9sygdvwszim.us-east-1.rds.amazonaws.com",
+    host="test.ciignquihkpp.us-east-1.rds.amazonaws.com",
     port=3306,
     database="tutorial",
     user="shlomi",
