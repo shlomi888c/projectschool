@@ -47,8 +47,6 @@ def get_number_of_pages(driver):
                 EC.presence_of_element_located((By.XPATH, "//*[@class='s-pagination-item s-pagination-button']"))).text
         except TimeoutException:
             print("The total number of pages was not found.")
-            number_of_pages = 5
-            #driver.refresh()
             time.sleep(3)
             continue
         else:
