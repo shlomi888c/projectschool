@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from selenium.common import TimeoutException, NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -8,8 +7,8 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 def open_browser(url, user_agent):
-    driver_location = '/usr/local/bin/chromedriver'
-    binary_location = '/usr/bin/google-chrome'
+    driver_location = '//usr/local/bin/chromedriver'
+    binary_location = '/usr/bin/google-chrome-stable'
 
     options = webdriver.ChromeOptions()
     options.binary_location = binary_location
@@ -44,9 +43,10 @@ def get_number_of_pages(driver):
     while True:
         try:
             number_of_pages = WebDriverWait(driver, 3).until(
-                EC.presence_of_element_located((By.XPATH, "/*[@class='s-pagination-item s-pagination-button']"))).text
+                EC.presence_of_element_located((By.XPATH, "//*[@class='s-pagination-item s-pagination-button']"))).text
         except TimeoutException:
             print("The total number of pages was not found.")
+            number_of_pages = 5
             time.sleep(3)
             continue
         else:
