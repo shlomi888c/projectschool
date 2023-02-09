@@ -27,7 +27,7 @@ def search_for_product(driver, article_name):
         except TimeoutException:
             try:
                 search_button = WebDriverWait(driver, 3).until(
-                    EC.presence_of_element_located((By.ID, "nav-bb-search")))
+                    EC.presence_of_element_located((By.ID, "nav-search-submit-button")))
             except TimeoutException:  # Exception when the ExplicitWait condition occurs
                 driver.refresh()
                 time.sleep(3)
