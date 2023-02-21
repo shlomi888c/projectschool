@@ -2,6 +2,7 @@ import mysql.connector
 from flask import Flask, render_template, request
 from main import scrape_products
 import requests
+import socket
 
 app = Flask(__name__)
 
@@ -13,12 +14,18 @@ def index():
 
 @app.route('/search', methods=['GET','POST'])
 def search():
-  consul_url = "http://54.204.255.212:8500/v1/agent/service/register"
-  data = {
-      "ID": "flask-app",
-      "Name": "flask-app",
-      "Address": "<Flask_App_IP>",
-      "Port": 5000
+  # Get the IP address of the current machine
+  s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+  s.connect(("8.8.8.8", 80))
+  flask_app_ip = s.getsockname()[0]
+  s.close()
+
+  consul_url = "http://<Consul_Server_IP>:8500/v1/agent/service/register"
+   data = {
+       "ID": "flask-app",
+       "Name": "flask-app",
+       "Address": flask_app_ip,
+       "Port": 5000
   }
   response = requests.put(consul_url, json=data)
   
