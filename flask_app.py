@@ -13,7 +13,7 @@ def index():
 
 @app.route('/search', methods=['GET','POST'])
 def search():
-  consul_url = "http://34.207.109.160:8500/v1/agent/service/register"
+  consul_url = "http://54.204.255.212:8500/v1/agent/service/register"
   data = {
       "ID": "flask-app",
       "Name": "flask-app",
