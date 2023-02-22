@@ -22,8 +22,8 @@ def search():
 
   consul_url = "http://34.233.136.127:8500/v1/agent/service/register"
   data = {
-       "ID": "flask-app",
-       "Name": "flask-app",
+       "ID": "{flask_app_ip}flask-app",
+       "Name": "{flask_app_ip}flask-app",
        "Address": flask_app_ip,
        "Port": 5000,
        "Check": {
