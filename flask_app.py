@@ -28,8 +28,7 @@ def search():
        "Port": 5000,
        "Check": {
          "HTTP": f"http://{flask_app_ip}:5000",
-         "Interval": "10s",
-         "Timeout": "1s"
+         "Interval": "10s"
        }
   }
   response = requests.put(consul_url, json=data)
