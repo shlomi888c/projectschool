@@ -30,6 +30,7 @@ def search():
          "HTTP": f"http://{flask_app_ip}:5000/health",
          "Interval": "10s",
          "Timeout": "1s"
+       }
   }
   response = requests.put(consul_url, json=data)
   
