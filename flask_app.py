@@ -26,10 +26,10 @@ def search():
        "Name": "flask-app",
        "Address": flask_app_ip,
        "Port": 5000,
-       "check": {
-            "http": flask_app_ip":5000",
-            "interval": "10s"
-       } 
+       "Check": {
+         "HTTP": f"http://{flask_app_ip}:5000/health",
+         "Interval": "10s",
+         "Timeout": "1s"
   }
   response = requests.put(consul_url, json=data)
   
