@@ -27,7 +27,7 @@ def search():
        "Address": flask_app_ip,
        "Port": 5000,
        "check": {
-            "http": flask_app_ip,
+            "http": flask_app_ip":5000",
             "interval": "10s"
        } 
   }
