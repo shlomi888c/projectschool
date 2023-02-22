@@ -20,7 +20,7 @@ def search():
   flask_app_ip = s.getsockname()[0]
   s.close()
 
-  consul_url = "http://34.229.87.149:8500/v1/agent/service/register"
+  consul_url = "http://3.80.110.166:8500/v1/agent/service/register"
   data = {
        "ID": "{flask_app_ip}flask-app",
        "Name": "{flask_app_ip}flask-app",
