@@ -36,7 +36,7 @@ def search():
   article_name = request.form['keyword']
   print(article_name)
   user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
-  url = "https://www.amazon.in"
+  url = "https://www.amazon.co.uk"
   product_name, product_price, product_link, product_image = scrape_products(url, user_agent, article_name)
   # Connect to the RDS instance
   cnx = mysql.connector.connect(
