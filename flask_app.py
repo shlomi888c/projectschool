@@ -3,6 +3,8 @@ from flask import Flask, render_template, request
 from main import scrape_products
 import requests
 import socket
+import os
+
 
 app = Flask(__name__)
 
@@ -43,8 +45,9 @@ def search():
     host="test.ciignquihkpp.us-east-1.rds.amazonaws.com",
     port=3306,
     database="tutorial",
-    user="shlomi",
-    password="Shimi431$$"
+  # Access the environment variables in your code
+    user = os.environ.get('USER')
+    password = os.environ.get('PASSWORD')
   )
 
   # Create a cursor
