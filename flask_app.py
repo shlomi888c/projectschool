@@ -24,7 +24,6 @@ def search():
 
   consul_ip = os.environ.get('ip_consul')
   consul_url = f"http://{consul_ip}/v1/agent/service/register"
-  #consul_url = "http://54.167.28.118:8500/v1/agent/service/register"
   data = {
        "ID": "flask-app" + flask_app_ip,
        "Name": "flask-app" + flask_app_ip,
@@ -44,7 +43,8 @@ def search():
   product_name, product_price, product_link, product_image = scrape_products(url, user_agent, article_name)
   # Connect to the RDS instance
   cnx = mysql.connector.connect(
-    host="test.ciignquihkpp.us-east-1.rds.amazonaws.com",
+    host_rds = os.environ.get('hostrds')
+    host="host_rds",
     port=3306,
     database="tutorial",
   # Access the environment variables in your code
