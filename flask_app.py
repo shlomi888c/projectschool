@@ -48,8 +48,8 @@ def search():
     port=3306,
     database="tutorial",
   # Access the environment variables in your code
-    user = os.environ.get('USER')
-    password = os.environ.get('PASSWORD')
+    user = os.environ.get('USER'),
+    password = os.environ.get('PASSWORD'),
   )
 
   # Create a cursor
