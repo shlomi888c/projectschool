@@ -43,7 +43,7 @@ def search():
   product_name, product_price, product_link, product_image = scrape_products(url, user_agent, article_name)
   # Connect to the RDS instance
   cnx = mysql.connector.connect(
-    host_rds = os.environ.get('hostrds')
+    host_rds = os.environ.get('hostrds'),
     host="host_rds",
     port=3306,
     database="tutorial",
