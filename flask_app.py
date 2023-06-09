@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from main import scrape_products
 import requests
 import socket
-import os
+#import os
 
 
 app = Flask(__name__)
@@ -22,7 +22,7 @@ def search():
   flask_app_ip = s.getsockname()[0]
   s.close()
 
-  consul_ip = os.environ.get('ip_consul')
+  #consul_ip = os.environ.get('ip_consul')
   consul_url = f"http://{consul_ip}:8500/v1/agent/service/register"
   data = {
        "ID": "flask-app" + flask_app_ip,
