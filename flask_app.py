@@ -22,8 +22,8 @@ def search():
   flask_app_ip = s.getsockname()[0]
   s.close()
 
-  #consul_ip = os.environ.get('ip_consul')
-  consul_url = f"http://54.226.128.182:8500/v1/agent/service/register"
+  consul_ip = os.environ.get('ip_consul')
+  consul_url = f"http://{consul_ip}:8500/v1/agent/service/register"
   data = {
        "ID": "flask-app" + flask_app_ip,
        "Name": "flask-app" + flask_app_ip,
@@ -44,7 +44,7 @@ def search():
   host_rds = os.environ.get('hostrds')
   # Connect to the RDS instance
   cnx = mysql.connector.connect(
-    host="host_rds",
+    host=host_rds,
     port=3306,
     database="tutorial",
   # Access the environment variables in your code
