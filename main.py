@@ -13,14 +13,14 @@ def open_browser(url, user_agent):
     options = webdriver.ChromeOptions()
     options.binary_location = binary_location
     options.add_argument('user-agent={user_agent}')
-    chrome_options.add_argument('--headless')  # Run Chrome in headless mode (without UI)
-    chrome_options.add_argument('--disable-gpu')  # Disable GPU acceleration
-    chrome_options.add_argument('--disable-dev-shm-usage')  # Disable /dev/shm usage
-    chrome_options.add_argument('--window-size=1920,1080')  # Set window size
-    chrome_options.add_argument('--disable-extensions')  # Disable Chrome extensions
-    chrome_options.add_argument('--disable-infobars')  # Disable the "Chrome is being controlled by automated test software" infobar
-    chrome_options.add_argument('--start-maximized')  # Start Chrome maximized
-    chrome_options.add_argument('--disable-popup-blocking')  # Disable popup blocking
+    options.add_argument('--headless')  # Run Chrome in headless mode (without UI)
+    options.add_argument('--disable-gpu')  # Disable GPU acceleration
+    options.add_argument('--disable-dev-shm-usage')  # Disable /dev/shm usage
+    options.add_argument('--window-size=1920,1080')  # Set window size
+    options.add_argument('--disable-extensions')  # Disable Chrome extensions
+    options.add_argument('--disable-infobars')  # Disable the "Chrome is being controlled by automated test software" infobar
+    options.add_argument('--start-maximized')  # Start Chrome maximized
+    options.add_argument('--disable-popup-blocking')  # Disable popup blocking
 
     driver = webdriver.Chrome(options=options)
     driver.get(url)
